@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MINI-TETRIS</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div id="game" style="position: absolute; width: 100%; height: 100%; background-color: #FFFFFF;">
+        <div style="margin: 0 auto; margin-top: 10px;">
+            <div id="error-box"></div>
+            <div id="debug-box"></div>
+            <div id="debug-tool" style="display: none;">
+                <button onclick="clearInterval(loopId)">Pause</button>
+                <button onclick="rndFrame()">Rand Frame</button>
+                <button onclick="rndDrop()">Drop</button>
+                <button onclick="continueRnd()">Continue</button>
+            </div>
+            <canvas id="cvs" style="border-style: dashed; border-width: 5px;"></canvas>
+            <script src="./config.js"></script>
+            <script src="./lib/debug.js"></script>
+            <script src="./components/canvas.js"></script>
+            <script src="./lib/grid.js"></script>
+            <script src="./components/wiper.js"></script>
+            <script src="./lib/block_shape.js"></script>
+            <script src="./lib/tetris_lib.js"></script>
+            <script src="./components/tetris.js"></script>
+            <script src="./components/fixed.js"></script>
+            <script src="./components/effect.js"></script>
+            <script src="./main.js"></script>
+            <div id="info" style="display: inline-block;">
+                <div id="line-count" class="info-box">0</div>
+                <div id="diff-box" class="info-box"></div>
+                <div id="hold-box" class="info-box">
+                    <canvas id="cvs-hld"></canvas>
+                    <script src="./components/holder.js"></script>
+                </div>
+                <div id="history-box" class="info-box">0</div>
+                <script>
+                    document.getElementById('history-box').innerHTML = document.cookie
+                </script>
+                <script src="./components/rank.js"></script>
+            </div><br>
+            <script>
+                document.getElementById('diff-box').innerHTML = difficulty
+            </script>
+        </div>
+    </div>
+    <div id="game-over-cover">
+        <h1 style="margin-top: 50%;">GAME OVER</h1>
+    </div>
+</body>
+</html>

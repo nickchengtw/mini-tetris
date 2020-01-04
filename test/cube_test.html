@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MINI-TETRIS-CUBE-TEST</title>
+    <style>
+        #error-box {
+            display: none;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-family: sans-serif;
+            color: #FFFFFF;
+            background-color: #F44336;
+        }
+        #debug-box {
+            display: none;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-family: sans-serif;
+            color: #000000;
+            background-color: #FFEB3B;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; text-align: center; background-color: #9E9E9E;">
+    <div id="error-box"></div>
+    <div id="debug-box"></div>
+    <canvas id="cvs"></canvas>
+    <script src="../config.js"></script>
+    <script>
+        function errorBox(content)
+        {
+            document.getElementById("error-box").style = "display: block"
+            document.getElementById("error-box").innerHTML = "FATAL ERROR : " + content
+        }
+
+        function debugBox(content)
+        {
+            document.getElementById("debug-box").style = "display: block"
+            document.getElementById("debug-box").innerHTML = content
+        }
+
+        function clog(content) {
+            if (debugMode == true) {
+                console.log(content)
+            }
+        }
+
+        document.getElementById('cvs').width = cubeSize*gridW;
+        document.getElementById('cvs').height = cubeSize*gridH;
+        document.getElementById('cvs').style.backgroundColor = '#FFFFFF'
+    </script>
+    <script src="../lib/grid.js"></script>
+    <script src="../lib/cube_lib.js"></script>
+    <script src="../components/wiper.js"></script>
+    <script src="../components/cube.js"></script>
+    <script src="./cube.js"></script>
+    <button onclick="clearInterval(loopId)">pause</button>
+    <button onclick="rndFrame()">rand</button>
+</body>
+</html>
