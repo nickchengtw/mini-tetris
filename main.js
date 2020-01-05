@@ -5,9 +5,11 @@ const ctx = cvs.getContext("2d");
 const areaW = cvs.width
 const areaH = cvs.height
 
+let loopId = null
 var gameObjects = [new Wiper(), new tetrisBlock(Math.floor(gridW/2))];
 
 var lineCount = 0
+document.getElementById('diff-box').innerHTML = difficulty
 
 function draw()
 {
@@ -40,7 +42,10 @@ function mainLoop() {
     draw();
 }
 
-let loopId = setInterval(function()
-{
-   mainLoop()
-}, 1000/fps);
+function startGame() {
+    loopId = setInterval(function() {
+        mainLoop()
+    }, 1000/fps);
+}
+
+startGame()

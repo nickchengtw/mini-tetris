@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="game.css">
 </head>
 <body>
-    <div id="game" style="position: absolute; width: 100%; height: 100%; background-color: #FFFFFF;">
-        <div style="margin: 0 auto; margin-top: 10px;">
+    <div id="game">
+        <div style="padding: none;">
             <div id="error-box"></div>
             <div id="debug-box"></div>
             <div id="debug-tool" style="display: none;">
@@ -16,7 +16,7 @@
                 <button onclick="rndDrop()">Drop</button>
                 <button onclick="continueRnd()">Continue</button>
             </div>
-            <canvas id="cvs" style="border-style: dashed; border-width: 5px;"></canvas>
+            <canvas id="cvs"></canvas>
             <script src="./config.js"></script>
             <script src="./lib/debug.js"></script>
             <script src="./components/canvas.js"></script>
@@ -27,8 +27,7 @@
             <script src="./components/tetris.js"></script>
             <script src="./components/fixed.js"></script>
             <script src="./components/effect.js"></script>
-            <script src="./main.js"></script>
-            <div id="info" style="display: inline-block;">
+            <div id="info" style="display: inline-block; margin-top: 10px;">
                 <div id="line-count" class="info-box">0</div>
                 <div id="diff-box" class="info-box"></div>
                 <div id="hold-box" class="info-box">
@@ -49,5 +48,6 @@
     <div id="game-over-cover">
         <h1 style="margin-top: 50%;">GAME OVER</h1>
     </div>
+    <script src="./main.js"></script>
 </body>
 </html>
