@@ -1,6 +1,6 @@
 
 const fps = 60;
-const debugMode = true;
+const debugMode = false;
 //const autoSize = true
 const gridW = 9;
 const gridH = 30;
